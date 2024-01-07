@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/CSharp/.vs
+/CSharp/Fibonacci.ConsoleApp/obj
+/CSharp/Fibonacci.Lib/obj
+/CSharp/Fibonacci.ConsoleApp/bin/Debug/net7.0
+/CSharp/Fibonacci.Lib/bin/Debug/net7.0
