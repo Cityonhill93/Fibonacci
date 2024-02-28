@@ -3,6 +3,7 @@ package main
 import (
 	"Fibonacci/common"
 	"Fibonacci/loop"
+	"Fibonacci/recursion"
 	"fmt"
 )
 
@@ -15,7 +16,7 @@ func main() {
 	printNumbers(digitCount, loop.LoopFibonacciService{})
 
 	fmt.Println("Running the recursive service...")
-	printNumbers(digitCount, RecursiveFibonacciService{})
+	printNumbers(digitCount, recursion.RecursiveFibonacciService{})
 
 	var discard string
 	fmt.Scanln(discard)
