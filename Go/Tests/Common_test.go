@@ -21,3 +21,11 @@ func TestGetPriorValuesReturnsTwoLatestValues(t *testing.T) {
 		t.Fail()
 	}
 }
+
+func ServiceReturnsCorrectNumbers(service Common.IFibonacciService, t *testing.T) {
+	var numbers = service.GetNumbers(5)
+
+	if numbers[0] != 0 || numbers[1] != 1 || numbers[2] != 1 || numbers[3] != 2 || numbers[4] != 3 {
+		t.Fail()
+	}
+}
