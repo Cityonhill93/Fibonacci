@@ -1,6 +1,6 @@
-package main
+package common
 
-func getNextValue(x, y int) int {
+func GetNextValue(x, y int) int {
 	var sums int = x + y
 	if sums == 0 {
 		return 1
@@ -9,7 +9,7 @@ func getNextValue(x, y int) int {
 	return sums
 }
 
-func getPriorValues(numbers []int) (int, int) {
+func GetPriorValues(numbers []int) (int, int) {
 	var maxIndex int = len(numbers) - 1
 
 	var priorValue int = getValueOrDefault(maxIndex, numbers)

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"Fibonacci/common"
 	"fmt"
 )
 
@@ -19,7 +20,7 @@ func main() {
 	fmt.Scanln(discard)
 }
 
-func printNumbers(count int, service IFibonacciService) {
+func printNumbers(count int, service common.IFibonacciService) {
 	var numbers []int = service.GetNumbers(count)
 
 	fmt.Println("Start...")
