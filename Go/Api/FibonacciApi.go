@@ -14,6 +14,21 @@ import (
 const loopMethod string = "loop"
 const recursiveMethod string = "recursion"
 
+func GetNumber(ctx *gin.Context) {
+	var strNumber string = ctx.Param("index")
+	var index, err = strconv.Atoi(strNumber)
+	if err == nil {
+		var method = getMethod(ctx)
+		var service = getService(method)
+		var allNumbers = service.GetNumbers(index + 1)
+		var numberAtIndex = allNumbers[index]
+
+		ctx.IndentedJSON(http.StatusOK, numberAtIndex)
+	} else {
+		ctx.IndentedJSON(http.StatusInternalServerError, err)
+	}
+}
+
 func GetNumbers(ctx *gin.Context) {
 	var count int = getCount(ctx)
 	var method string = getMethod(ctx)
