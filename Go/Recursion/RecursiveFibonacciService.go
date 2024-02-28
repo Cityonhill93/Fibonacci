@@ -1,7 +1,7 @@
-package recursion
+package Recursion
 
 import (
-	"Fibonacci/common"
+	"Fibonacci/Common"
 )
 
 type RecursiveFibonacciService struct {
@@ -15,8 +15,8 @@ func getNumbersRecursive(numbers []int, count int) []int {
 	var outNumbers []int
 
 	if len(numbers) > 0 {
-		var x, y int = common.GetPriorValues(numbers)
-		var nextValue int = common.GetNextValue(x, y)
+		var x, y int = Common.GetPriorValues(numbers)
+		var nextValue int = Common.GetNextValue(x, y)
 		outNumbers = append(numbers, nextValue)
 	} else {
 		outNumbers = append(numbers, 0)
