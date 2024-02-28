@@ -1,4 +1,4 @@
-package common
+package Common
 
 func GetNextValue(x, y int) int {
 	var sums int = x + y
