@@ -17,7 +17,7 @@ func TestGetPriorValuesReturnsTwoLatestValues(t *testing.T) {
 	var allValues [6]int = [6]int{0, 1, 1, 2, 3, 5}
 	var valueOne, valueTwo int = Common.GetPriorValues(allValues[:])
 
-	if valueOne != 3 || valueTwo != 5 {
+	if valueOne != 5 || valueTwo != 3 {
 		t.Fail()
 	}
 }
