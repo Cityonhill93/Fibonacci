@@ -30,7 +30,11 @@ func GetNumber(ctx *gin.Context) {
 }
 
 func GetNumbers(ctx *gin.Context) {
-	var count int = getCount(ctx)
+	var count, error = getCount(ctx)
+	if error != nil {
+		ctx.Error(error)
+	}
+
 	var method string = getMethod(ctx)
 
 	var service Common.IFibonacciService = getService(method)
@@ -39,19 +43,19 @@ func GetNumbers(ctx *gin.Context) {
 	ctx.IndentedJSON(http.StatusOK, numbers)
 }
 
-func getCount(ctx *gin.Context) int {
+func getCount(ctx *gin.Context) (int, error) {
 	qsValue := ctx.Query("count")
 	if qsValue == "" {
-		return 5
+		return 5, nil
 	} else {
 		var count int
 		var err error
 
 		count, err = strconv.Atoi(qsValue)
 		if err == nil {
-			return count
+			return count, nil
 		} else {
-			return 5
+			return -1, err
 		}
 	}
 }
