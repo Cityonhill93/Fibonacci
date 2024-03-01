@@ -25,14 +25,14 @@ func GetNumber(ctx *gin.Context) {
 
 		ctx.IndentedJSON(http.StatusOK, numberAtIndex)
 	} else {
-		ctx.IndentedJSON(http.StatusInternalServerError, err)
+		ctx.Error(err)
 	}
 }
 
 func GetNumbers(ctx *gin.Context) {
-	var count, error = getCount(ctx)
-	if error != nil {
-		ctx.Error(error)
+	var count, err = getCount(ctx)
+	if err != nil {
+		ctx.Error(err)
 	}
 
 	var method string = getMethod(ctx)
